@@ -29,7 +29,6 @@ async function updateGist(stats) {
   for (let i = 0; i < Math.min(stats.data.languages.length, 4); i++) {
     const data = stats.data.languages[i];
     const { name, percent, text: time } = data;
-
     const line = [
       name.padEnd(11),
       time.padStart(14) + " ",
@@ -43,6 +42,7 @@ async function updateGist(stats) {
   try {
     // Get original filename to update that same file
     const filename = Object.keys(gist.data.files)[0];
+    console.log(filename, lines)
     await octokit.gists.update({
       gist_id: gistId,
       files: {
