@@ -47,7 +47,7 @@ async function updateGist(stats) {
       files: {
         [filename]: {
           filename: `📊 Weekly development breakdown`,
-          content: line.length ? lines.join("\n") : "wait..."
+          content: lines.length ? lines.join("\n") : "wait..."
         }
       }
     });
