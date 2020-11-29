@@ -8,10 +8,6 @@ const {
   WAKATIME_API_KEY: wakatimeApiKey
 } = process.env;
 
-console.log("gistId", gistId);
-console.log("githubToken", githubToken);
-console.log("wakatimeApiKey", wakatimeApiKey);
-
 const wakatime = new WakaTimeClient(wakatimeApiKey);
 
 const octokit = new Octokit({ auth: `token ${githubToken}` });
@@ -46,13 +42,12 @@ async function updateGist(stats) {
   try {
     // Get original filename to update that same file
     const filename = Object.keys(gist.data.files)[0];
-    console.log(filename, lines);
     await octokit.gists.update({
       gist_id: gistId,
       files: {
         [filename]: {
           filename: `📊 Weekly development breakdown`,
-          content: lines.join("\n")
+          content: line.length ? lines.join("\n") : "wait..."
         }
       }
     });
