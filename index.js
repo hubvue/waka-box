@@ -30,8 +30,8 @@ async function updateGist(stats) {
     const data = stats.data.languages[i];
     const { name, percent, text: time } = data;
     const line = [
-      name.padEnd(11),
-      time.padStart(14) + " ",
+      name.padEnd(10),
+      time.padStart(13) + " ",
       unicodeProgressBar(percent + 15),
       String(percent.toFixed(1)).padStart(5) + "%"
     ];
