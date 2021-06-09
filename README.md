@@ -27,4 +27,4 @@
 1. Go to the repo **Settings > Secrets**
 1. Add the following environment variables:
    - **GH_TOKEN:** The GitHub token generated above.
-   - **WAKATIME_API_KEY:** The API key for your WakaTime account.
+   - **WAKATIME_API_KEY:** The API key for your WakaTime account
